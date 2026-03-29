@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Cash Flow Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>💰 Cash Flow Tracker</h1>
+        </header>
+
+        <section class="input-grid">
+            <div class="card input-card">
+                <h3><i class="emoji">💵</i> Monthly Income</h3>
+                <div class="form-group">
+                    <input type="number" id="salaryInput" placeholder="Total Salary Amount">
+                    <button class="btn btn-success" onclick="setSalary()">Set Salary</button>
+                </div>
+            </div>
+
+            <div class="card input-card">
+                <h3><i class="emoji">📝</i> New Expense</h3>
+                <div class="form-group">
+                    <input type="text" id="expenseName" placeholder="Expense Name (e.g., Rent)">
+                    <input type="number" id="expenseAmount" placeholder="Amount">
+                    <button class="btn btn-primary" onclick="addExpense()">Add Expense</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <div class="stat-card">
+                <span>Total Salary</span>
+                <h2 id="totalSalary">₹0.00</h2>
+            </div>
+            <div class="stat-card">
+                <span>Total Expenses</span>
+                <h2 id="totalExpenses" class="text-danger">₹0.00</h2>
+            </div>
+            <div class="stat-card">
+                <span>Balance</span>
+                <h2 id="balance" class="text-success">₹0.00</h2>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="card chart-box">
+                <h3>Visual Breakdown</h3>
+                <div class="canvas-wrapper">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card list-box">
+                <div class="list-header">
+                    <h3>History</h3>
+                    <button class="btn-text" onclick="resetData()">Reset All</button>
+                </div>
+                <ul id="expenseList"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
